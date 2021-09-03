@@ -1,5 +1,6 @@
 # PyCharm configuration files.
 .idea
+archives
 
 # Python environment
 __pycache__
