@@ -6,7 +6,7 @@ def factorial(x):
     return r
 
 
-def main():
+def main() -> None:
     nombre = int(input("Entrez votre nombre: "))
     print(f"La factorielle de {nombre} est: {factorial(r)}")
 
