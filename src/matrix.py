@@ -31,9 +31,11 @@ class Matrix(list):
         """Return the matrix representation."""
         align = len(str(self.max))
 
-        return f'<Matrix(%s)>' % ', '.join(
-            '[%s]' % ', '.join(f'{n:={align}}' for n in line)
-            for line in self
+        return (
+            '<Matrix(%s)>' % ', '.join(
+                '[%s]' % ', '.join(f'{n:={align}}' for n in line)
+                for line in self
+            )
         )
 
     def __layer_map(self, func: Callable[[Any], Any]) -> int:
