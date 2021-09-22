@@ -2,8 +2,8 @@
 The given exercise was to make a Matrix which we could retrieve
 columns and rows number as well as min, max and sum.
 """
-
-from typing import Any, Callable
+from types import GeneratorType
+from typing import Any, Callable, Generator
 
 
 class InvalidMatrix(Exception):
@@ -17,6 +17,8 @@ class Matrix(list):
 
     def __init__(self, *args):
         """Initialize a new Matrix with each argument as a line."""
+        if len(args) and isinstance(args[0], GeneratorType):
+            args = list(args[0])
 
         if not all(isinstance(line, list) for line in args):
             raise InvalidMatrix()
