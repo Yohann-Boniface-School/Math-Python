@@ -1,5 +1,6 @@
 from random import randint
 
+
 def game():
     numbers = [randint(1, 5) for _ in range(5)]
     print("->", *numbers)

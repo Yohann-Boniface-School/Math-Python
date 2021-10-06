@@ -1,10 +1,10 @@
-from typing import TypeVar, List
+from typing import TypeVar, List, Union
 
 S = TypeVar("S")
 T = TypeVar("T")
 
 
-def alternate_lists(t1: List[S], t2: List[T]) -> List[S, T]:
+def alternate_lists(t1: List[S], t2: List[T]) -> List[Union[S, T]]:
     return [x for y in zip(t2, t1) for x in y]
 
 
